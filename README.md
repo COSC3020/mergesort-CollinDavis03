@@ -11,11 +11,14 @@ part of the array each recursive call considers.
 
 ## Runtime Analysis
 
-Analyse the time complexity of your implementation and give a $\Theta$ bound for
+Analyze the time complexity of your implementation and give a $\Theta$ bound for
 its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
 
 Complexity Analysis: 
-The runtime for this version of mergesort without the recursive stuff. The runtime is practically the same as the original because it is doing the same thing as the normal mergesort. Now if we were to divide it into bigger 
-subarrays then that would change the runtime analysis. In the end, the runtime analysis should be $\Theta$ (nlogn) is what the runtime is. With divide and conquer that is going to be different because that algorithm is 
-dividing everything into three subarrays. This mergesort is the same as it is listed in the slides provided to us by Professor Lars. 
+Looking back at my mergesort function. My mergesort function takes the value of one and keeps doubling the subarrays until it gets to the correct 
+size of subarrays needed to sort the function in the correct order. With that, that value would be theta(n) and with the normal mergesort function,
+it is theta(nlogn). With the original mergesort function, I need to apply the theta(n) to that function. Which I would end up with theta(n^2logn) 
+This is my runtime analysis for this mergesort because the n value is doubling so it is an exponent. I do not know how to do the complicated 
+math function in github. 
+The Runtime analysis: T(n) fork pointing right Theta(n^2logn) 
