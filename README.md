@@ -57,20 +57,19 @@ function merge(array, left, mid, right) {
     }
 }
 
-Looking at this code I have an outer and inner loop in the mergesort function. 
-The outer loop takes n as the length of the array given and the length set as 1. If the length is less than n, it will double the size of the length until it is greater than n. which would generate the log(n) time because of the way the function works.
+Looking back at my outer loop function the length doubles with every iteration done. This will execute log_2n times in the runtime analysis. With that execution 
+it will create _O_(log n) for all the iterations done in it. 
 
-The inner loop pretty much is set to take all the subarrays that have been created and compare the sizes of the elements to one another if one is greater than the other it will swap them but if it is less than the other it will keep it. Which will connect to the merge function and start to merge all the subarrays once it has been organized. 
+The inner loop divides the arrays into subarrays depending on their length, making this iteration _O_(n (2 x length)). This happens twice with the left and right. 
+This will just make _O_(n^2)
 
-Pretty much we have two loops working together to sort and organize the arrays to be sorted. With them working together it means worst case possible it is exponentially changing. Which equals (n^2) is the
-worst-case scenario. 
+Now we have to merge the two functions so it creates one complexity analysis. This will make _O_(n^2 log n) for the overall time complexity. 
 
-With knowing the runtime of the inner and outer function. We have to mulitple them together. The results 
-of the runtime analysis should be theta(n^2log(n)) 
+The worst-case scenario is just theta(n^2 log n) since we have to do it to the theta bound. 
 
 Sources: 
 I looked at Nolan Tachbar's readme file to get a grasp on how you wanted me to write this readme for
 the complexity analysis. https://github.com/COSC3020/mergesort-NolanNachbar/tree/NolanNachbar-patch-1 
-I also chatted with him to help explain to me how he got there. Everything else done in here was by me. 
-To be honest this took me a lot longer to do because I did not really understand the grasp 
-of runtime analysis. 
+I chatted with Nolan at the start of it so I could get a grasp on how to write a complexity analysis. 
+I also, watched your video and some other videos online so I can understand a complexity analysis 
+a lot better for the future. In the end, this took a lot longer than I thought it would. 
