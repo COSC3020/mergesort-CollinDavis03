@@ -57,15 +57,15 @@ function merge(array, left, mid, right) {
     }
 }
 
-Looking back at my outer loop function the length doubles with every iteration done. This will execute log_2n times in the runtime analysis. With that execution 
-it will create _O_(log n) for all the iterations done in it. 
+Looking back at my outer loop function the length doubles with every iteration done. This will execute log_(2)n times in the runtime analysis. With that execution, it will create _O_(log n) for all the iterations done. 
 
-The inner loop divides the arrays into subarrays depending on their length, making this iteration _O_(n (2 x length)). This happens twice with the left and right. 
-This will just make _O_(n^2)
+Since the inner loop is shifting the elements around the run time should be _O_(n). This is with respect to n. This is from the processing of individual elements. 
 
-Now we have to merge the two functions so it creates one complexity analysis. This will make _O_(n^2 log n) for the overall time complexity. 
+The standard runtime comes from the (n) is the sorting of elements or the merging. The log n comes from the spliting of the arrays. 
 
-The worst-case scenario is just theta(n^2 log n) since we have to do it to the theta bound. 
+The standard time for the runtime with mergesort is _O_(n log n). With the inner loop being _O_(n). We have to merge them together. Which will look like _O_(n x n log n) = _O_(n^2 log n). 
+
+The worst-case scenario runtime is theta(n^2 log n) 
 
 Sources: 
 I looked at Nolan Tachbar's readme file to get a grasp on how you wanted me to write this readme for
