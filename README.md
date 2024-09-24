@@ -59,11 +59,11 @@ function merge(array, left, mid, right) {
 
 Looking back at my outer loop function the length doubles with every iteration done. This will execute log_(2)n times in the runtime analysis. With that execution, it will create _O_(log n) for all the iterations done. 
 
-Since the inner loop is shifting the elements around the run time should be _O_(n). This is with respect to n. This is from the processing of individual elements. 
+Since the inner loop is shifting the elements around the run time should be _O_(n). This is concerning n. This is from the processing of individual elements and the moving and splitting it is doing. 
 
-The standard runtime comes from the (n) is the sorting of elements or the merging. The log n comes from the spliting of the arrays. 
+The standard runtime comes from the (n), which is the sorting or merging of elements. The log n comes from the splitting of the arrays. Which will create _O_(n log n) this is also the standard runtime for mergesort. 
 
-The standard time for the runtime with mergesort is _O_(n log n). With the inner loop being _O_(n). We have to merge them together. Which will look like _O_(n x n log n) = _O_(n^2 log n). 
+The standard time for the runtime with mergesort is _O_(n log n). With the inner loop being _O_(n). We have to merge them. Which will look like _O_(n x n log n) = _O_(n^2 log n). 
 
 The worst-case scenario runtime is theta(n^2 log n) 
 
