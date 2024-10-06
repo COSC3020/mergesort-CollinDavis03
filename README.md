@@ -16,56 +16,21 @@ its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
 
 Complexity Analysis: 
-Here is my code for the activity. 
-function mergesort(array) {
-    let n = array.length;
 
-    // Start the subarrays of 1 and double with each iteration 
-    for(let length = 1; length < n; length *= 2){
-        for(let left = 0; left < n - 1; left += 2 * length) {
-            let mid = Math.min(left + length - 1, n - 1); 
-            let right = Math.min(left + 2 * length - 1, n-1); 
-            merge(array, left, mid, right);
-        }
-    }
-    
-    return array;
-}
+Looking through my code again deeply I know there are two components to this function. Which are the outer loops and the merge function. 
 
-function merge(array, left, mid, right) {
-    let start = left; 
-    let end = mid + 1; 
+With the merge function, this could have a loop. We can look at it in a loop logic thought process. A loop inside of a loop is just n * n as the worst-case scenario. 
 
-    while (start <= mid && end <= right) {
-        if (array[start] <= array[end]) {
-            start++; 
-        } else {
-            let value = array[end]; 
-            let index = end; 
+The outer loop will keep doubling from 1 until it gets to the size of the array which is an exponent-like reaction. 
 
-            while (index !== start) {
-                array[index] = array[index - 1]; 
-                index--; 
-            }
+The merge function just merges the array in order and will move the element if it is greater than the one that it is being compared to. This function will have a runtime of n depending on the length of the array. 
 
-            array[start] = value; 
+Then the inner loop pretty much creates two arrays and has the value in one of the arrays and compares it to the value in the other array and switches with it if is less than that other value and keeps moving down the array until it can not be switched anymore. This follows the n value again too. This is where I get n * n because of the two loops in the merge function. 
 
-            start++;
-            mid++;
-            end++;
-        }
-    }
-}
+The worst case for this is n^2 because we multiply the loops together. 
 
-Looking back at my outer loop function the length doubles with every iteration done. This will execute log_(2)n times in the runtime analysis. With that execution, it will create _O_(log n) for all the iterations done. 
+We have to multiply this into the loops. With that, we should get $\Theta (n^2log(n))$ as the worst-case scenario. 
 
-Since the inner loop is shifting the elements around the run time should be _O_(n). This is concerning n. This is from the processing of individual elements and the moving and splitting it is doing. 
-
-The standard runtime comes from the (n), which is the sorting or merging of elements. The log n comes from the splitting of the arrays. Which will create _O_(n log n) this is also the standard runtime for mergesort. 
-
-The standard time for the runtime with mergesort is _O_(n log n). With the inner loop being _O_(n). We have to merge them. Which will look like _O_(n x n log n) = _O_(n^2 log n). 
-
-The worst-case scenario runtime is theta(n^2 log n) 
 
 Sources: 
 I looked at Nolan Tachbar's readme file to get a grasp on how you wanted me to write this readme for
