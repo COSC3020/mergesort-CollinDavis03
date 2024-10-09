@@ -29,6 +29,8 @@ Then the inner loop pretty much creates two arrays and has the value in one of t
 
 The worst case for this is n^2 because we multiply the loops together. 
 
+With each division of the array until it gets to 1 is where _O_(log n) comes from. 
+
 We have to multiply this into the loops. With that, we should get $\Theta (n^2log(n))$ as the worst-case scenario. 
 
 
