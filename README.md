@@ -17,22 +17,13 @@ markdown file.
 
 Complexity Analysis: 
 
-Looking through my code again deeply I know there are two components to this function. Which are the outer loops and the merge function. 
+Looking back at my code for the 100th time now. 
 
-With the merge function, this could have a loop. We can look at it in a loop logic thought process. A loop inside of a loop is just n * n as the worst-case scenario. 
+Within my code in the for(let length = 1; length < n; length *=2). This is considered the outer loop in this code and with iteration, it does it will double the length of the array and when the length reaches the length of the array that has been inserted into the function it will stop. This will produce _O_(log n). 
 
-The outer loop will keep doubling from 1 until it gets to the size of the array which is an exponent-like reaction. 
+Then the inner loop that I have for(let left = 0; left < n - 1; left += 2 * length) { let mid = Math.min(left + length - 1, n - 1); let right = Math.min(left + 2 * length - 1, n-1);This will divide the arrays into subarrays and organize them into the sorted array that is needed in the end. Since we have the left and right doing n iterations because of the swapping within the arrays. This would be _O_(n^2).
 
-The merge function just merges the array in order and will move the element if it is greater than the one that it is being compared to. This function will have a runtime of n depending on the length of the array. 
-
-Then the inner loop pretty much creates two arrays and has the value in one of the arrays and compares it to the value in the other array and switches with it if is less than that other value and keeps moving down the array until it can not be switched anymore. This follows the n value again too. This is where I get n * n because of the two loops in the merge function. 
-
-The worst case for this is n^2 because we multiply the loops together. 
-
-With each division of the array until it gets to 1 is where _O_(log n) comes from. 
-
-We have to multiply this into the loops. With that, we should get $\Theta (n^2log(n))$ as the worst-case scenario. 
-
+We have to merge what we got for the outer and inner loop which will end up being _O_(n^2 log n). 
 
 Sources: 
 I looked at Nolan Tachbar's readme file to get a grasp on how you wanted me to write this readme for
