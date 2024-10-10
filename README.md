@@ -21,7 +21,7 @@ Looking back at my code for the 100th time now.
 
 Within my code in the for(let length = 1; length < n; length *=2). This is considered the outer loop in this code and with iteration, it does it will double the length of the array and when the length reaches the length of the array that has been inserted into the function it will stop. This will produce _O_(log n). 
 
-Then the inner loop that I have for(let left = 0; left < n - 1; left += 2 * length) { let mid = Math.min(left + length - 1, n - 1); let right = Math.min(left + 2 * length - 1, n-1);This will divide the arrays into subarrays and organize them into the sorted array that is needed in the end. Since we have the left and right doing n iterations because of the swapping within the arrays. This would be _O_(n^2).
+The while loops within the merge function taking n iterations. Starting off with that if the start value is less than the end value it will be stored as the start value. This would be an _n_iteration. Then the second while is in charge of the shifting of the elements within the array. This is another n iteration. It will give you n x n = n^2 
 
 We have to merge what we got for the outer and inner loop which will end up being _O_(n^2 log n). 
 
